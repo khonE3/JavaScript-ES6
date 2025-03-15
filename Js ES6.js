@@ -1,14 +1,4 @@
-# JavaScript Complete Code Summary 📜
-
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat&logo=javascript)  
-สรุปโค้ด JavaScript ทั้งหมดจากต้นฉบับ คงเนื้อหาครบถ้วนพร้อมคำอธิบายสั้นๆ
-
-## 📋 Code Summary
-
-โค้ดนี้ครอบคลุมประเภทข้อมูลพื้นฐาน เมธอด และเทคนิคการเขียนโปรแกรมใน JavaScript ตั้งแต่ String, Number, Array ไปจนถึง DOM และ Web API โดยมีตัวอย่างและคำอธิบายประกอบในโค้ดด้วยคอมเมนต์
-
-```javascript
-// 📋 Data Types - ประเภทข้อมูลพื้นฐาน
+//?📋 Data Types
 // String (ข้อความ)
 const name1 = 'John' // Single-quote
 const name2 = "John" // Double-quote
@@ -37,7 +27,8 @@ const array = [1, 2, 3]         // Array (ข้อมูลหลายมิ�
 
 console.log(name1, typeof name1) // ตรวจสอบประเภทข้อมูล
 
-// 🔠 String - การจัดการข้อความ
+
+//?🔠 String
 const firstName = 'John'
 const lastName = 'Doe'
 const age = 18
@@ -64,7 +55,8 @@ console.log(`Single-quote: ' & Double-quote: "`)  // 😎 ใช้ Backtick จ
 const fromNumber = String(123)
 const fromObject = JSON.stringify({ name: 'John' })
 
-// 🔠🛠️ String Methods - เมธอดสำหรับข้อความ
+
+//?🔠🛠️ String Methods
 const text = 'abc123'
 
 text.length                 // 📏 ความยาวข้อความ
@@ -91,7 +83,8 @@ text.padEnd(10, '0')        // 🔢⬅️  แทรกข้อความส�
 text.toLowerCase()          // 🔠 แปลงข้อความเป็นตัวพิมพ์เล็ก
 text.toUpperCase()          // 🔡 แปลงข้อความเป็นตัวพิมพ์ใหญ่
 
-// 🔢 Number - การจัดการตัวเลข
+
+//?🔢 Number
 const aa = 3
 const bb = 2
 const notANumber = NaN
@@ -127,13 +120,15 @@ const fromString1 = Number('00123')    // 123
 const fromString2 = parseInt('123abc') // 123
 const fromString3 = +'123'             // 123
 
-// IEEE 754 - ปัญหาการคำนวณทศนิยม
+//! IEEE 754
 console.log(0.3 - 0.2) // ❓ ไม่ได้เท่ากับ 0.1 แต่ได้ใกล้เคียง
+
 console.log((0.3).toFixed(2))  // ✅ แสดงสองหน่วย
 console.log((0.3).toFixed(16)) // ✅ แสดง 16 หน่วย
 console.log((0.3).toFixed(17)) // ❌ แสดง 17 หน่วย เริ่มเห็นว่าจำนวน 0.3 มีความคลาดเคลื่อน
 
 // ภาษาโปรแกรมหลายตัวใช้มาตรฐานคอมพิวเตอร์ IEEE 754 ในการแปลงจำนวนจาก Binary (2) ไปเป็น Decimal (10)
+
 const base = 2 // ทดลองเปลี่ยนระหว่าง 2, 10
 console.log((1).toString(base), (2).toString(base), (3).toString(base), (4).toString(base), (5).toString(base), (6).toString(base), (7).toString(base), (8).toString(base), (9).toString(base), (10).toString(base), (11).toString(base), (11).toString(base))
 console.log((0.3).toString(2)) // ค่าที่ได้เป็น Binary
@@ -146,11 +141,12 @@ const bbb = 0.2
 console.log(a - b)
 console.log((a - b).toFixed(1))         // แก้ด้วย .toFixed()
 console.log(((a * 10) - (b * 10)) / 10) // แก้ด้วย *10 และ /10
+
 console.log((a - b).toFixed(17)) // ❌ แบบนี้จะกลับมามีปัญหาอีกรอบ
 
 // 🧑‍💻 มือโปรส่วนใหญ่จะเลือกใช้ Library ช่วยแก้ปัญหานี้ เช่น decimal.js: https://mikemcl.github.io/decimal.js/
 
-// 🔢🛠️ Number Methods - เมธอดสำหรับตัวเลข
+//?🔢🛠️ Number Methods
 const number = 31
 
 number.toString()          // 🔠 แปลงเป็น String
@@ -166,7 +162,8 @@ parseInt('150px')          // 🔢✅ รองรับที่มีข้อ
 parseFloat('1.2.3')        // 🔢✅ แปลงเป็นจำนวนทศนิยม
 parseFloat('95.45px')      // 🔢✅ รองรับที่มีข้อความรวมเข้ามาเช่นกัน
 
-// ➗🛠️ Math Methods - ฟังก์ชันคณิตศาสตร์
+
+//?➗🛠️ Math Methods
 Math.round(1.5)              // ➕➖ ปัดเศษตามหลักคณิตศาสตร์
 Math.floor(1.5)              // 🔻 ปัดเศษลง
 Math.ceil(1.5)               // 🔺 ปัดเศษขึ้น
@@ -180,7 +177,8 @@ Math.min(20, 50, 30, 10, 40) // 🔍⬇️ ค้นหาจำนวนน้�
 Math.max(20, 50, 30, 10, 40) // 🔍⬆️ ค้นหาจำนวนมากที่สุด
 Math.random()                // 🎲 สุ่มจำนวนจาก 0 ถึง 1
 
-// ✅❌ Boolean - การจัดการค่าจริง/เท็จ
+
+//?✅❌ Boolean
 const aaaa = 2
 const bbbb = 5
 console.log(a < b)   // น้อยกว่า
@@ -193,7 +191,7 @@ console.log(a === b) // เท่ากับทั้ง Data Type & Value
 console.log(a !== b) // ไม่เท่ากับทั้ง Data Type & Value
 console.log(a = b)   // ⚠️ ระวัง: กำหนดค่า (Assignment)
 
-// Logic - ตรรกะ
+//? Logic
 const t = true
 const f = false
 const not = !t
@@ -208,12 +206,15 @@ console.log(input >= 10 && input <= 20) // 10 ถึง 20
 // const fromString2 = Boolean('')  // false
 // 0, NaN, '', null, undefined = false
 
-// 💫 Short-Circuit Evaluation - การประเมินแบบสั้น
+
+//?💫 Short-Circuit Evaluation
 isActive && renderActive() // ถ้า Boolean(isActive) = true ให้ทำงานข้างหลังต่อ
 input || 'Default Value'   // ถ้า Boolean(input) = false ให้ทำงานข้างหลังต่อ
 input && 'Default Value'   // ถ้า input = null || undefined ให้ทำงานข้างหลังต่อ
 
-// 🍔 Array - การจัดการลิสต์ข้อมูล
+
+
+//?🍔 Array
 const colors = ['red', 'green', 'blue']
 console.log(typeof colors) // ❓ object เพราะ JavaScript ไม่มีข้อมูลประเภท array แต่จะเป็นหนึ่งในรูปแบบ object แทน
 console.log(colors[0])     // 🔴 red
@@ -237,7 +238,8 @@ function sum(...numbers) { // Rest Parameters
   Array.isArray(numbers)   // true
 }
 
-// 🍔🛠️ Array Methods - เมธอดสำหรับ Array
+
+//?🍔🛠️ Array Methods
 const list = ['A', 'B', 'C']
 const people = ['Anna', 'John', 'Jane', 'Joe', 'Kevin', 'Max', 'Sally', 'Zoe', 'Tina']
 
@@ -287,7 +289,8 @@ people.map(person => person.toUpperCase())
 // ➖ ลดจำนวนเนื้อหาจาก Array ให้กลายเป็นอย่างอื่น ตาม Callback ที่จะมีค่าก่อนหน้า และค่าปัจจุบัน (คล้ายกัย .join())
 numbers.reduce((total, number) => total + number, 0)
 
-// 🍡 Set - ข้อมูลที่ไม่ซ้ำกัน
+
+//?🍡 Set
 const set1 = new Set(['A', 'B', 'C'])
 const set2 = new Set(['B', 'C', 'D'])
 
@@ -300,7 +303,8 @@ set1.intersection(set2) // Intersection
 set1.symmetricDifference(set2) // Symmetric Difference
 set1.union(set2)        // Union
 
-// 🍭 Object - ข้อมูลแบบ Key-Value
+
+//?🍭 Object
 const person = {
   name: 'John Doe',
   age: 22,
@@ -341,7 +345,8 @@ _.isEqual(data1, data2) // ✅ ใช้ Lodash หรืออื่นๆใ�
 //{ ...person, country: 'TH' } // รวม Object (Object Spread)
 Object.assign({}, person, { country: 'TH' }) // รวม Object (Method)
 
-// 🍭🛠️ Object Methods - เมธอดสำหรับ Object
+
+//?🍭🛠️ Object Methods
 const persons = { name: 'John Doe', age: 22 }
 
 Object.keys(persons)    // Object to Array (Keys)
@@ -352,7 +357,8 @@ Object.fromEntries([['name', 'John Doe'], ['age', 22]]) // Array to Object
 JSON.stringify(persons)                        // Object to String
 JSON.parse('{"name": "John Doe", "age": 22}') // String to Object
 
-// 🗃️ Object-oriented Programming (OOP) - การเขียนโปรแกรมเชิงวัตถุ
+
+//?🗃️ Object-oriented Programming (OOP)
 // Design Pattern: https://refactoring.guru/
 
 class User {
@@ -403,7 +409,8 @@ User.isLogin(user)       // Call Static Method
 admin.login('admin123')
 admin.deleteUser(1)
 
-// ⚠️ Error Handling - การจัดการข้อผิดพลาด
+
+//?⚠️ Error Handling
 try {
   someFunctionDoAnything()
   maybeItWillBeThrow()
@@ -420,7 +427,8 @@ try {
   // ... (optional)
 }
 
-// 🫸⌚ Promise & Async/Await - การจัดการงานแบบ Asynchronous
+
+//?🫸⌚ Promise & Async/Await
 function doSomething(params, cb) { // Callback
   // ...
   cb(error, result)
@@ -463,7 +471,8 @@ async function run() {
 }
 run() // อย่าลืมเรียกใช้งาน async function ที่ประกาศ
 
-// 🫸🛠️ Promise Methods - เมธอดสำหรับ Promise
+
+//?🫸🛠️ Promise Methods
 const jobs = [
   doSomething(args1),
   doSomething(args2),
@@ -474,7 +483,8 @@ Promise.allSettled(jobs) // รอทุกตัวรันจนเสร็�
 Promise.race(jobs)       // ตัวไหนรันเสร็จก่อนนำผลลัพธ์นั้นไปใช้ ห้าม throw
 Promise.any(jobs)        // ตัวไหนรันเสร็จก่อนนำผลลัพธ์นั้นไปใช้ throw ได้
 
-// 🗺️ Map - ข้อมูลแบบ Key-Value (Map)
+
+//?🗺️ Map
 //const map = new Map([['name', 'John Doe'], ['age', 22])
 
 map.has('age')       // 🔍 Map.has() ตรวจสอบการมีตัวตน
@@ -483,7 +493,8 @@ map.get('age')       // ↗️ Map.get() เรียกข้อมูลโด
 map.delete('isPaid') // 🗑️ Map.delete() ลบข้อมูล
 map.size             // 📏 Map.size จํานวนข้อมูล
 
-// ⌛ Delay - การหน่วงเวลา
+
+//?⌛ Delay
 const timeoutId = setTimeout(() => {
   // รันหลังจากเวลาที่กำหนด
 }, 1000) // (1000 = 1 วินาที)
@@ -499,7 +510,8 @@ clearInterval(intervalId) // ยกเลิกการรัน setInterval
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 await delay(1000) // รอเวลาที่กำหนด
 
-// 📅⌚ Date & Time - การจัดการวันที่และเวลา
+
+//?📅⌚ Date & Time
 const date = new Date()
 
 date.getFullYear()     // ปี
@@ -523,7 +535,8 @@ date.toLocaleDateString(locale, options) // แสดงวันตาม local
 date.toLocaleTimeString(locale, options) // แสดงเวลาตาม locale, options
 date.toISOString()                       // วันเวลาแบบ ISO
 
-// 🔗 URL - การจัดการ URL
+
+//?🔗 URL
 const url = new URL('https://example.com:8080/path/name?query=value#hash')
 
 url.origin       // https://example.com:8080
@@ -544,7 +557,8 @@ url.searchParams.delete('key')          // ลบ Query
 encodeURIComponent(url) // Encode เป็น URL ที่ใช้งานได้
 decodeURIComponent(url) // Decode เป็น URL ที่อ่านได้
 
-// 🐶🦴 Fetch - การดึงข้อมูลจาก API
+
+//?🐶🦴 Fetch
 //const url = 'https://jsonplaceholder.typicode.com/posts/1'
 
 fetch(url)
@@ -572,7 +586,8 @@ fetch(url, {
   include: 'credentials'
 })
 
-// ⌨️ Form Data - การจัดการข้อมูลฟอร์ม
+
+//?⌨️ Form Data
 const formData = new FormData()
 const file = document.querySelector('#avatar').files[0]
 
@@ -585,7 +600,9 @@ fetct('/api/user/upload-avatar', {
   body: formData
 })
 
-// 🖥️ DOM - การจัดการ DOM ในหน้าเว็บ
+
+
+//?🖥️ DOM
 document.documentElement // <html>
 document.body            // <body>
 document.head            // <head>
@@ -646,7 +663,8 @@ button.addEventListener('click', (event) => {
 })
 document.addEventListener('DOMContentLoaded', () => {}) // รอ DOM เสร็จ
 
-// 💽 localStorage - การจัดเก็บข้อมูลในเบราว์เซอร์
+
+//?💽 localStorage
 localStorage.setItem('name', 'John Doe') // บันทึกข้อมูล
 localStorage.getItem('name')             // เรียกข้อมูล
 localStorage.removeItem('name')          // ลบข้อมูล
@@ -657,7 +675,8 @@ sessionStorage.getItem('name')
 sessionStorage.removeItem('name')
 sessionStorage.clear()
 
-// 🧋 Web API - API ของเบราว์เซอร์
+
+//?🧋 Web API
 // Clipboard API
 navigator.clipboard.writeText(text)
 
@@ -713,3 +732,4 @@ inputFileElement.addEventListener('change', (event) => {
   }
   reader.readAsDataURL(event.target.files[0])
 })
+

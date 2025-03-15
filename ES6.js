@@ -21,7 +21,7 @@ let reduceSum = scoreS.reduce((sum, scorereduce)=>{
 //find ค้นหา
 let finddic = scoreS.find((findinfo)=>{
     return findinfo <= 50;
-}) //fimdIndex หาตำแหน่งตามเงื่อนไข
+}) //findIndex หาตำแหน่งตามเงื่อนไข
 
 //every เงื่อนไขทุกอันในArrayต้องTurn
 //some เงื่อนไขบางตัว
